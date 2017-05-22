@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title>Android调用js代码</title>
+</head>
+<body>
+      用户：<div id="name">游客</div>
+      <img src = "girl_14.jpg" width="350px"/>
+
+    <button id="but_click" onclick="show()" >点击传数据给Android</button>
+    <!-- JS调用Android原生方法 Android中的方法为showToast-->
+
+       <!--Android调用js方法  webView.loaduri("javascript:showUser('"+user+"','"+pswword+"'')") -->
+   <script type="text/javascript">
+
+      /*function showUser(user,psw) {
+
+            document.getElementById("name").innerHTML = user+"密码："+psw;
+            alert(user+psw);
+
+      }*/
+      function show(){
+       var msg = document.getElementById("name").innerText;
+       //alert(msg);
+         window.android.show(msg);
+      }
+
+
+   </script>
+</body>
+</html>
